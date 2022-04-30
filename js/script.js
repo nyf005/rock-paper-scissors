@@ -30,8 +30,6 @@ function capitalize(text) {
 }
 
 function playRound(playerSelection, computerSelection) {
-  // Capitalize the playerSelection
-  playerSelection = capitalize(playerSelection);
   let result;
 
   if (playerSelection == computerSelection) {
@@ -64,6 +62,20 @@ function game() {
     // Get player choice
     playerChoice = prompt("Rock? Paper? or Scissors?");
 
+    // Capitalize the playerChoice
+    playerChoice = capitalize(playerChoice);
+
+    // Make sure player spell correctly
+    while (
+      playerChoice != "Rock" &&
+      playerChoice != "Paper" &&
+      playerChoice != "Scissors"
+    ) {
+      playerChoice = prompt(
+        "There might be a typo in your choice. Make sure you type Rock, Paper or Scissors"
+      );
+    }
+
     // Get the winner of the current round
     result = playRound(playerChoice, computerPlay());
 
@@ -95,7 +107,3 @@ function game() {
 }
 
 game();
-
-// const playerSelection = "ROck";
-// const computerSelection = computerPlay();
-// console.log(playRound(playerSelection, computerSelection));
