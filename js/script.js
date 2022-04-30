@@ -6,13 +6,25 @@ function computerPlay() {
 
   // Set computer choice based on random number
   if (randomNumber == 0) {
-    computerChoice = "Rock";
+    computerChoice = "ROCK";
   } else if (randomNumber == 1) {
-    computerChoice = "Paper";
+    computerChoice = "PAPER";
   } else {
-    computerChoice = "Scissors";
+    computerChoice = "SCISSORS";
   }
 
   // Return computer choice
   return computerChoice;
+}
+
+// Create a function to capitalize a given text
+function capitalize(text) {
+  // Get the first letter and capitalize it
+  let firstLetter = text.slice(0, 1).toUpperCase();
+
+  // Make the rest of the text lowercase
+  let restOfText = text.slice(1).toLowerCase();
+
+  // return the capitalized text
+  return firstLetter + restOfText;
 }
