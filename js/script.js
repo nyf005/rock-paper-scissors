@@ -35,22 +35,37 @@ function playRound(playerSelection, computerSelection) {
   let result;
 
   if (playerSelection == computerSelection) {
-    result = `It's a tie game!`;
+    console.log(`It's a tie game!`);
+    result = null;
   } else if (
     // Here are the only cases in which the player can win
     (playerSelection == "Paper" && computerSelection == "Rock") ||
     (playerSelection == "Rock" && computerSelection == "Scissors") ||
     (playerSelection == "Scissors" && computerSelection == "Paper")
   ) {
-    result = `You Win! ${playerSelection} beats ${computerSelection}`;
+    console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
+    result = "PLAYER";
   } else {
     // Otherwise, the computer wins
-    result = `You Lose! ${computerSelection} beats ${playerSelection}`;
+    console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
+    result = "COMPUTER";
   }
 
   return result;
 }
 
-const playerSelection = "ROck";
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+function game() {
+  let playerChoice;
+  let winner;
+  let playerScore, computerScore;
+  9;
+  for (let i = 0; i < 5; i++) {
+    playerChoice = prompt("Rock? Paper? or Scissors?");
+    console.log(playRound(playerChoice, computerPlay()));
+  }
+}
+
+game();
+// const playerSelection = "ROck";
+// const computerSelection = computerPlay();
+// console.log(playRound(playerSelection, computerSelection));
