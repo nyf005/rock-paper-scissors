@@ -54,18 +54,6 @@ function playRound(playerSelection, computerSelection) {
   return result;
 }
 
-function game() {
-  let playerChoice;
-  let winner;
-  let playerScore, computerScore;
-  9;
-  for (let i = 0; i < 5; i++) {
-    playerChoice = prompt("Rock? Paper? or Scissors?");
-    console.log(playRound(playerChoice, computerPlay()));
-  }
-}
-
-game();
 // const playerSelection = "ROck";
 // const computerSelection = computerPlay();
 // console.log(playRound(playerSelection, computerSelection));
