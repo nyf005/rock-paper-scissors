@@ -17,18 +17,6 @@ function computerPlay() {
   return computerChoice;
 }
 
-// Create a function to capitalize a given text
-function capitalize(text) {
-  // Get the first letter and capitalize it
-  let firstLetter = text.slice(0, 1).toUpperCase();
-
-  // Make the rest of the text lowercase
-  let restOfText = text.slice(1).toLowerCase();
-
-  // return the capitalized text
-  return firstLetter + restOfText;
-}
-
 function playRound(playerSelection, computerSelection) {
   let result;
 
@@ -71,7 +59,7 @@ function game() {
       return;
     }
 
-    // Make sure player spell correctly
+    // Make sure player entry is spelled correctly
     while (
       playerChoice != "Rock" &&
       playerChoice != "Paper" &&
@@ -93,6 +81,23 @@ function game() {
     }
   }
 
+  displayWinner(playerScore, computerScore);
+}
+
+// HELPER FUNCTIONS
+
+function capitalize(text) {
+  // Get the first letter and capitalize it
+  let firstLetter = text.slice(0, 1).toUpperCase();
+
+  // Make the rest of the text lowercase
+  let restOfText = text.slice(1).toLowerCase();
+
+  // return the capitalized text
+  return firstLetter + restOfText;
+}
+
+function displayWinner(playerScore, computerScore) {
   // Display result at the end of the game
   if (playerScore > computerScore) {
     console.log(
