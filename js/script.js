@@ -13,7 +13,6 @@ function computerPlay() {
     computerChoice = "Scissors";
   }
 
-  // Return computer choice
   return computerChoice;
 }
 
@@ -48,7 +47,6 @@ function game() {
   9;
 
   for (let i = 0; i < 5; i++) {
-    // Get player choice
     playerChoice = prompt("Rock? Paper? or Scissors?");
 
     if (playerChoice !== null) {
