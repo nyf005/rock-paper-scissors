@@ -58,12 +58,18 @@ function game() {
   let playerScore = 0;
   let computerScore = 0;
   9;
+
   for (let i = 0; i < 5; i++) {
     // Get player choice
     playerChoice = prompt("Rock? Paper? or Scissors?");
 
-    // Capitalize the playerChoice
-    playerChoice = capitalize(playerChoice);
+    if (playerChoice !== null) {
+      // Capitalize the playerChoice
+      playerChoice = capitalize(playerChoice);
+    } else {
+      // Quit application avoiding the error when trying to capitalize null value
+      return;
+    }
 
     // Make sure player spell correctly
     while (
