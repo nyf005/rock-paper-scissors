@@ -1,3 +1,18 @@
+const rockBtn = document.getElementById("rock");
+const paperBtn = document.getElementById("paper");
+const scissorsBtn = document.getElementById("scissors");
+
+rockBtn.addEventListener("click", (e) => {
+  playRound(capitalize(e.target["id"]), computerPlay());
+});
+paperBtn.addEventListener("click", (e) => {
+  playRound(capitalize(e.target["id"]), computerPlay());
+});
+
+scissorsBtn.addEventListener("click", (e) => {
+  playRound(capitalize(e.target["id"]), computerPlay());
+});
+
 function computerPlay() {
   let randomNumber;
   let computerChoice;
@@ -43,35 +58,35 @@ function game() {
   let computerScore = 0;
   9;
 
-  for (let i = 0; i < 5; i++) {
-    playerChoice = prompt("Rock? Paper? or Scissors?");
+  // for (let i = 0; i < 5; i++) {
+  //   playerChoice = prompt("Rock? Paper? or Scissors?");
 
-    if (playerChoice !== null) {
-      playerChoice = capitalize(playerChoice);
-    } else {
-      // Quit application avoiding the error when trying to capitalize null value
-      return;
-    }
+  //   if (playerChoice !== null) {
+  //     playerChoice = capitalize(playerChoice);
+  //   } else {
+  //     // Quit application avoiding the error when trying to capitalize null value
+  //     return;
+  //   }
 
-    // Make sure player entry is spelled correctly
-    while (
-      playerChoice != "Rock" &&
-      playerChoice != "Paper" &&
-      playerChoice != "Scissors"
-    ) {
-      playerChoice = prompt(
-        "There might be a typo in your choice. Make sure you type Rock, Paper or Scissors"
-      );
-    }
+  //   // Make sure player entry is spelled correctly
+  //   while (
+  //     playerChoice != "Rock" &&
+  //     playerChoice != "Paper" &&
+  //     playerChoice != "Scissors"
+  //   ) {
+  //     playerChoice = prompt(
+  //       "There might be a typo in your choice. Make sure you type Rock, Paper or Scissors"
+  //     );
+  //   }
 
-    result = playRound(playerChoice, computerPlay());
+  //   result = playRound(playerChoice, computerPlay());
 
-    if (result == "COMPUTER") {
-      computerScore += 1;
-    } else if (result == "PLAYER") {
-      playerScore += 1;
-    }
-  }
+  //   if (result == "COMPUTER") {
+  //     computerScore += 1;
+  //   } else if (result == "PLAYER") {
+  //     playerScore += 1;
+  //   }
+  // }
 
   displayWinner(playerScore, computerScore);
 }
