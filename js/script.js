@@ -13,6 +13,10 @@ scissorsBtn.addEventListener("click", (e) => {
   playRound(capitalize(e.target["id"]), computerPlay());
 });
 
+const resultText = document.querySelector("#results p");
+const userScore = document.querySelector(".user-score h1");
+const compScore = document.querySelector(".computer-score h1");
+
 function computerPlay() {
   let randomNumber;
   let computerChoice;
@@ -34,17 +38,17 @@ function playRound(playerSelection, computerSelection) {
   let result;
 
   if (playerSelection == computerSelection) {
-    console.log(`It's a tie game!`);
+    resultText.textContent = `It's a tie game!`;
     result = null;
   } else if (
     (playerSelection == "Paper" && computerSelection == "Rock") ||
     (playerSelection == "Rock" && computerSelection == "Scissors") ||
     (playerSelection == "Scissors" && computerSelection == "Paper")
   ) {
-    console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
+    resultText.textContent = `You Win! ${playerSelection} beats ${computerSelection}`;
     result = "PLAYER";
   } else {
-    console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
+    resultText.textContent = `You Lose! ${computerSelection} beats ${playerSelection}`;
     result = "COMPUTER";
   }
 
@@ -56,7 +60,6 @@ function game() {
   let result;
   let playerScore = 0;
   let computerScore = 0;
-  9;
 
   // for (let i = 0; i < 5; i++) {
   //   playerChoice = prompt("Rock? Paper? or Scissors?");
@@ -101,21 +104,15 @@ function capitalize(text) {
 
 function displayWinner(playerScore, computerScore) {
   if (playerScore > computerScore) {
-    console.log(
-      `Your score: ${playerScore} - Computer Score: ${computerScore}`
-    );
-    console.log(`YOU WON!!!`);
+    resultText.textContent = `YOU WON!!!`;
   } else if (computerScore > playerScore) {
-    console.log(
-      `Your score: ${playerScore} - Computer Score: ${computerScore}`
-    );
-    console.log("YOU LOST");
+    resultText.textContent = "YOU LOST";
   } else {
-    console.log(
-      `Your score: ${playerScore} - Computer Score: ${computerScore}`
-    );
-    console.log("TIE");
+    resultText.textContent = "TIE";
   }
+
+  userScore.textContent = playerScore;
+  compScore.textContent = computerScore;
 }
 
 game();
