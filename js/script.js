@@ -54,7 +54,9 @@ function playRound(playerSelection, computerSelection) {
       computerScore++;
       compScore.textContent = computerScore;
     }
-  } else {
+  }
+
+  if (playerScore == 5 || computerScore == 5) {
     displayWinner(playerScore, computerScore);
   }
 }
