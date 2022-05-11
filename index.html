@@ -5,33 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/script.js" defer></script>
   </head>
   <body>
-    <div class="container">
-      <div id="rps-btns">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
-    
-    </div>
-    <div id="results">
-        <p></p>
-        <div id="user">
-          <h3>USER</h3>
-          <div class="user-score score">
-            <h1>3</h1>
+    <header>
+      <div class="container">
+        <div id="logo-name">
+          <h3>ROCK - PAPER - SCISSORS</h3>
+        </div>
+        <div id="logo">
+          <img src="./img/rps-logo.png" alt="logo" />
+        </div>
+      </div>
+    </header>
+    <section id="details">
+      <div class="container">
+        <div id="player-box" class="box">
+          <div class="name">
+            <h3>Player</h3>
+          </div>
+          <div class="score-btns">
+            <div class="score">
+              <h1>3</h1>
+            </div>
+            <div class="btn-group">
+              <a id="rock" class="btn">
+                <img src="./img/rock.png" alt="" />
+              </a>
+              <a id="paper" class="btn"><img src="./img/paper.png" alt="" /></a>
+              <a id="scissors" class="btn"
+                ><img src="./img/scissors.png" alt=""
+              /></a>
+            </div>
           </div>
         </div>
-        <span id="separator">
-          <h1> - </h1>
-        </span>
-        <div id="computer">
-          <h3>COMPUTER</h3>
-          <div class="computer-score score">
-            <h1></h1>
+        <div id="computer-box" class="box">
+          <div class="name">
+            <h3>Computer</h3>
+          </div>
+          <div class="score-btns">
+            <div class="btn-group">
+              <span class="fill"></span>
+              <a class="btn"><img src="./img/scissors.png" alt="" /></a>
+              <span class="fill"></span>
+            </div>
+
+            <div class="score">
+              <h1>3</h1>
+            </div>
           </div>
         </div>
-    </div>
+      </div>
+    </section>
+    <section id="results">
+      <div class="container">
+        <h1>The winner is You!!!</h1>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <p>Copyright NYF</p>
+      </div>
+    </footer>
   </body>
 </html>

@@ -4,3 +4,118 @@
     padding: 0;
 }
 
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+
+}
+
+.container {
+    width: 80vw;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+}
+
+header, footer {
+    background-color: #F6F6F6;
+}
+
+header {
+    height: 10vh;
+}
+
+header div {
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo img{
+   width: 80px;
+}
+
+#details {
+    height: 65vh;
+    background: linear-gradient(to right, #fede53 50% , #f35281 50%);
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.score-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#player-box {
+    background-color: #fede53;
+}
+
+#computer-box {
+    background-color: #f35281;
+}
+
+#computer-box .name {
+    margin-left: auto;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btn {
+    width: 100px;
+    height: 100px;
+}
+
+.fill {
+    width: 100px;
+    height: 100px;
+    background-color: transparent; 
+}
+
+.btn img {
+    width: 100%;
+}
+
+.score {
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score h1 {
+    font-size: 5em;
+    text-align: center;
+}
+
+#results {
+    height: 15vh;
+    background-color: #7fcfda;
+}
+
+#results div {
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    height: 10vh;
+}
+
+footer div {
+    justify-content: center;
+    align-items: center;
+}
