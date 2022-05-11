@@ -19,13 +19,25 @@ compScore.textContent = computerScore;
 
 // Play round when user clicks on appropriate buttons
 rockBtn.addEventListener("click", (e) => {
+  rockBtn.classList.add("active");
+  paperBtn.classList.remove("active");
+  scissorsBtn.classList.remove("active");
+
   playRound(capitalize(e.target["id"]), computerPlay());
 });
 paperBtn.addEventListener("click", (e) => {
+  rockBtn.classList.remove("active");
+  paperBtn.classList.add("active");
+  scissorsBtn.classList.remove("active");
+
   playRound(capitalize(e.target["id"]), computerPlay());
 });
 
 scissorsBtn.addEventListener("click", (e) => {
+  rockBtn.classList.remove("active");
+  paperBtn.classList.remove("active");
+  scissorsBtn.classList.add("active");
+
   playRound(capitalize(e.target["id"]), computerPlay());
 });
 
