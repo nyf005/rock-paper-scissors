@@ -1,6 +1,6 @@
+// Global variables for the game
 let playerScore = 0;
 let computerScore = 0;
-let endOfGame = false;
 
 const rockBtn = document.getElementById("rock");
 const paperBtn = document.getElementById("paper");
@@ -14,6 +14,7 @@ const restartBtn = document.createElement("button");
 
 newGame();
 
+// Play round when user clicks on appropriate buttons
 rockBtn.addEventListener("click", (e) => {
   playRound(capitalize(e.target["id"]), computerPlay());
 });
@@ -32,27 +33,32 @@ function computerPlay() {
   let computerChoice;
   const compChoice = document.querySelector("#computer-box a img");
 
-  randomNumber = Math.floor(Math.random() * 3);
+  // While both players scores is under 5, make computer choose a random number
+  if (playerScore < 5 && computerScore < 5) {
+    randomNumber = Math.floor(Math.random() * 3);
 
-  if (randomNumber == 0) {
-    computerChoice = "Rock";
-    compChoice.setAttribute("src", "./img/rock.png");
-  } else if (randomNumber == 1) {
-    computerChoice = "Paper";
-    compChoice.setAttribute("src", "./img/paper.png");
-  } else {
-    computerChoice = "Scissors";
-    compChoice.setAttribute("src", "./img/scissors.png");
+    if (randomNumber == 0) {
+      computerChoice = "Rock";
+      compChoice.setAttribute("src", "./img/rock.png");
+    } else if (randomNumber == 1) {
+      computerChoice = "Paper";
+      compChoice.setAttribute("src", "./img/paper.png");
+    } else {
+      computerChoice = "Scissors";
+      compChoice.setAttribute("src", "./img/scissors.png");
+    }
   }
 
   return computerChoice;
 }
 
 function playRound(playerSelection, computerSelection) {
+  // Play a round while any of the player have reach 5
   if (playerScore < 5 && computerScore < 5) {
     if (playerSelection == computerSelection) {
       resultText.textContent = `It's a tie game!`;
     } else if (
+      // Here are the only sets where player beats computer
       (playerSelection == "Paper" && computerSelection == "Rock") ||
       (playerSelection == "Rock" && computerSelection == "Scissors") ||
       (playerSelection == "Scissors" && computerSelection == "Paper")
@@ -67,7 +73,8 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 
-  if ((playerScore == 5 || computerScore == 5) && !endOfGame) {
+  // Display result as soon as one player reaches 5
+  if (playerScore == 5 || computerScore == 5) {
     displayWinner(playerScore, computerScore);
   }
 }
@@ -87,7 +94,6 @@ function displayWinner(player, computer) {
     resultText.textContent = "YOU LOST.";
   }
   createRestartBtn();
-  endOfGame = true;
 }
 
 function createRestartBtn() {
@@ -99,10 +105,12 @@ function createRestartBtn() {
 }
 
 function newGame() {
+  // Reset global variables
   playerScore = 0;
   computerScore = 0;
-  endOfGame = false;
 
+  // Update the UI
   pScore.textContent = playerScore;
   compScore.textContent = computerScore;
+  resultText.textContent = "First player to reach 5 wins. Let's go !!!";
 }
