@@ -6,11 +6,11 @@ const rockBtn = document.getElementById("rock");
 const paperBtn = document.getElementById("paper");
 const scissorsBtn = document.getElementById("scissors");
 
-const restartBtn = document.createElement("button");
-
 const resultText = document.querySelector("#results h1");
 const pScore = document.querySelector("#player-box .score h1");
 const compScore = document.querySelector("#computer-box .score h1");
+
+const restartBtn = document.createElement("button");
 
 newGame();
 
@@ -30,15 +30,19 @@ restartBtn.addEventListener("click", newGame);
 function computerPlay() {
   let randomNumber;
   let computerChoice;
+  const compChoice = document.querySelector("#computer-box a img");
 
   randomNumber = Math.floor(Math.random() * 3);
 
   if (randomNumber == 0) {
     computerChoice = "Rock";
+    compChoice.setAttribute("src", "./img/rock.png");
   } else if (randomNumber == 1) {
     computerChoice = "Paper";
+    compChoice.setAttribute("src", "./img/paper.png");
   } else {
     computerChoice = "Scissors";
+    compChoice.setAttribute("src", "./img/scissors.png");
   }
 
   return computerChoice;
