@@ -6,12 +6,13 @@ const rockBtn = document.getElementById("rock");
 const paperBtn = document.getElementById("paper");
 const scissorsBtn = document.getElementById("scissors");
 
+const restartBtn = document.createElement("button");
+
 const resultText = document.querySelector("#results h1");
 const pScore = document.querySelector("#player-box .score h1");
 const compScore = document.querySelector("#computer-box .score h1");
 
-pScore.textContent = playerScore;
-compScore.textContent = computerScore;
+newGame();
 
 rockBtn.addEventListener("click", (e) => {
   playRound(capitalize(e.target["id"]), computerPlay());
@@ -23,6 +24,8 @@ paperBtn.addEventListener("click", (e) => {
 scissorsBtn.addEventListener("click", (e) => {
   playRound(capitalize(e.target["id"]), computerPlay());
 });
+
+restartBtn.addEventListener("click", newGame);
 
 function computerPlay() {
   let randomNumber;
@@ -84,7 +87,6 @@ function displayWinner(player, computer) {
 }
 
 function createRestartBtn() {
-  const restartBtn = document.createElement("button");
   restartBtn.classList.add("restart");
   restartBtn.textContent = "Play again";
 
@@ -92,7 +94,11 @@ function createRestartBtn() {
   resultContainer.appendChild(restartBtn);
 }
 
-function playAgain() {
+function newGame() {
   playerScore = 0;
   computerScore = 0;
+  endOfGame = false;
+
+  pScore.textContent = playerScore;
+  compScore.textContent = computerScore;
 }
