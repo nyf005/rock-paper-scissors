@@ -35,7 +35,7 @@ header div {
 }
 
 #details {
-    height: 65vh;
+    height: 60vh;
     background: linear-gradient(to right, #fede53 50% , #f35281 50%);
 }
 
@@ -69,12 +69,23 @@ header div {
 .btn-group {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 20px;
 }
 
 .btn {
     width: 100px;
     height: 100px;
+    background-color: #F6F6F6;
+    border-radius: 55px;
+}
+
+.btn:hover {
+    border: 5px #000 solid;
+}
+
+a.btn:hover {
+    border: none;
 }
 
 .fill {
@@ -102,13 +113,20 @@ header div {
 }
 
 #results {
-    height: 15vh;
+    height: 20vh;
     background-color: #7fcfda;
 }
 
 #results div {
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 30px;
+}
+
+.restart {
+    padding: 10px 20px;
+    font-size: 1.2em;
 }
 
 footer {
