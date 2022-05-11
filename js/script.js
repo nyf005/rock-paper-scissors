@@ -10,9 +10,12 @@ const resultText = document.querySelector("#results h1");
 const pScore = document.querySelector("#player-box .score h1");
 const compScore = document.querySelector("#computer-box .score h1");
 
+const resultContainer = document.querySelector("#results div");
+
 const restartBtn = document.createElement("button");
 
-newGame();
+pScore.textContent = playerScore;
+compScore.textContent = computerScore;
 
 // Play round when user clicks on appropriate buttons
 rockBtn.addEventListener("click", (e) => {
@@ -100,7 +103,6 @@ function createRestartBtn() {
   restartBtn.classList.add("restart");
   restartBtn.textContent = "Play again";
 
-  const resultContainer = document.querySelector("#results .container");
   resultContainer.appendChild(restartBtn);
 }
 
@@ -112,5 +114,6 @@ function newGame() {
   // Update the UI
   pScore.textContent = playerScore;
   compScore.textContent = computerScore;
+  resultContainer.removeChild(restartBtn);
   resultText.textContent = "First player to reach 5 wins. Let's go !!!";
 }
