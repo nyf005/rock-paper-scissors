@@ -1,13 +1,17 @@
 let playerScore = 0;
 let computerScore = 0;
+let endOfGame = false;
 
 const rockBtn = document.getElementById("rock");
 const paperBtn = document.getElementById("paper");
 const scissorsBtn = document.getElementById("scissors");
 
-const resultText = document.querySelector("#results p");
-const pScore = document.querySelector(".user-score h1");
-const compScore = document.querySelector(".computer-score h1");
+const resultText = document.querySelector("#results h1");
+const pScore = document.querySelector("#player-box .score h1");
+const compScore = document.querySelector("#computer-box .score h1");
+
+pScore.textContent = playerScore;
+compScore.textContent = computerScore;
 
 rockBtn.addEventListener("click", (e) => {
   playRound(capitalize(e.target["id"]), computerPlay());
@@ -56,7 +60,7 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 
-  if (playerScore == 5 || computerScore == 5) {
+  if ((playerScore == 5 || computerScore == 5) && !endOfGame) {
     displayWinner(playerScore, computerScore);
   }
 }
@@ -71,11 +75,24 @@ function capitalize(text) {
 
 function displayWinner(player, computer) {
   if (player > computer) {
-    resultText.textContent = `YOU WON!!!`;
+    resultText.textContent = `YOU WON !!!`;
   } else {
-    resultText.textContent = "YOU LOST";
+    resultText.textContent = "YOU LOST.";
   }
+  createRestartBtn();
+  endOfGame = true;
+}
 
-  pScore.textContent = playerScore;
-  compScore.textContent = computerScore;
+function createRestartBtn() {
+  const restartBtn = document.createElement("button");
+  restartBtn.classList.add("restart");
+  restartBtn.textContent = "Play again";
+
+  const resultContainer = document.querySelector("#results .container");
+  resultContainer.appendChild(restartBtn);
+}
+
+function playAgain() {
+  playerScore = 0;
+  computerScore = 0;
 }
