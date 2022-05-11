@@ -88,6 +88,10 @@ a.btn:hover {
     border: none;
 }
 
+.active {
+    border: 5px #aaa solid;
+}
+
 .fill {
     width: 100px;
     height: 100px;
@@ -127,6 +131,8 @@ a.btn:hover {
 .restart {
     padding: 10px 20px;
     font-size: 1.2em;
+    background-color: #fff;
+    border-radius: 20px;
 }
 
 footer {
